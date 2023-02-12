@@ -10,7 +10,6 @@ RUN bash <(curl -sL https://get.graalvm.org/jdk) graalvm-ce-java17-22.3.1
 ENV PATH="//graalvm-ce-java17-22.3.1/bin:$PATH"
 ENV JAVA_HOME="//graalvm-ce-java17-22.3.1"
 RUN java -version
-RUN curl -s "https://get.sdkman.io" | bash
-RUN "source $HOME/.sdkman/bin/sdkman-init.sh; sdk help; sdk install gradle 7.6"
+RUN curl -s "https://get.sdkman.io" | bash && "source $HOME/.sdkman/bin/sdkman-init.sh; sdk help; sdk install gradle 7.6"
 RUN apt-get install -y chromium-browser chromium-chromedriver
 
