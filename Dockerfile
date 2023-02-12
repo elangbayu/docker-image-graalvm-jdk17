@@ -1,6 +1,8 @@
 # base image for automation testing QA
 FROM ubuntu:20.04 
 SHELL ["/bin/bash", "-c"]
+RUN adduser -D qa
+USER qa
 RUN date
 RUN ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 RUN apt-get update -y
