@@ -11,7 +11,6 @@ RUN export PATH="//graalvm-ce-java17-22.3.1/bin:$PATH"
 RUN export JAVA_HOME="//graalvm-ce-java17-22.3.1"
 RUN java -version
 RUN curl -s "https://get.sdkman.io" | bash
-RUN source "/root/.sdkman/bin/sdkman-init.sh"
-RUN sdk help
-RUN sdk install gradle 7.6
+RUN "source /root/.sdkman/bin/sdkman-init.sh; sdk help; sdk install gradle 7.6"
 RUN apt-get install -y chromium-browser chromium-chromedriver
+
