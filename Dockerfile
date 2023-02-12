@@ -1,6 +1,6 @@
 # base image for automation testing QA
 FROM ubuntu:20.04 
-RUN useradd -ms /bin/bash nqa
+RUN useradd -ms /bin/bash qa
 USER qa
 WORKDIR /home/newuser
 RUN date
