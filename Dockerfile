@@ -5,4 +5,12 @@ RUN ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 RUN apt-get update -y
 RUN apt-get install -y groff less python3 python3-pip curl openjdk-8-jdk zip jq dbus tzdata -y
 RUN pip install awscli && aws configure set default.region ap-southeast-1
-
+RUN bash <(curl -sL https://get.graalvm.org/jdk) graalvm-ce-java17-22.3.1
+RUN export PATH="//graalvm-ce-java17-22.3.1/bin:$PATH"
+RUN export JAVA_HOME="//graalvm-ce-java17-22.3.1"
+RUN java -version
+RUN curl -s "https://get.sdkman.io" | bash
+RUN source "/root/.sdkman/bin/sdkman-init.sh"
+RUN sdk help
+RUN sdk install gradle 7.6
+RUN apt-get install -y chromium-browser chromium-chromedriver
